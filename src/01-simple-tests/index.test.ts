@@ -1,32 +1,80 @@
-// Uncomment the code below and write your tests
-// import { simpleCalculator, Action } from './index';
+import { simpleCalculator, Action, RawCalculatorInput } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    // Write your test here
+    const res = 3;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: Action.Add,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should subtract two numbers', () => {
-    // Write your test here
+    const res = -1;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: Action.Subtract,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should multiply two numbers', () => {
-    // Write your test here
+    const res = 2;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: Action.Multiply,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should divide two numbers', () => {
-    // Write your test here
+    const res = 0.5;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: Action.Divide,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should exponentiate two numbers', () => {
-    // Write your test here
+    const res = 1;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: Action.Exponentiate,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should return null for invalid action', () => {
-    // Write your test here
+    const res = null;
+    const funcArguments: RawCalculatorInput = {
+      a: 1,
+      b: 2,
+      action: 'invalid',
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 
   test('should return null for invalid arguments', () => {
-    // Write your test here
+    const res = null;
+    const funcArguments: RawCalculatorInput = {
+      a: '1',
+      b: '2',
+      action: Action.Add,
+    };
+
+    expect(simpleCalculator(funcArguments)).toBe(res);
   });
 });
