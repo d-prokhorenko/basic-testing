@@ -2,79 +2,86 @@ import { simpleCalculator, Action, RawCalculatorInput } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    const res = 3;
+    const expected = 3;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: Action.Add,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should subtract two numbers', () => {
-    const res = -1;
+    const expected = -1;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: Action.Subtract,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should multiply two numbers', () => {
-    const res = 2;
+    const expected = 2;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: Action.Multiply,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should divide two numbers', () => {
-    const res = 0.5;
+    const expected = 0.5;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: Action.Divide,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should exponentiate two numbers', () => {
-    const res = 1;
+    const expected = 1;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: Action.Exponentiate,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should return null for invalid action', () => {
-    const res = null;
+    const expected = null;
     const funcArguments: RawCalculatorInput = {
       a: 1,
       b: 2,
       action: 'invalid',
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 
   test('should return null for invalid arguments', () => {
-    const res = null;
+    const expected = null;
     const funcArguments: RawCalculatorInput = {
       a: '1',
       b: '2',
       action: Action.Add,
     };
+    const result = simpleCalculator(funcArguments);
 
-    expect(simpleCalculator(funcArguments)).toBe(res);
+    expect(result).toBe(expected);
   });
 });
